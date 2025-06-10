@@ -16,6 +16,7 @@ app.use(express.json());
 
 app.use("/api", authRoutes);
 app.use("/api/todo", toDoRoutes);
+
 app.use(express.static(path.join(__dirname, "client/build")));
 
 app.get("*", (req, res) => {
