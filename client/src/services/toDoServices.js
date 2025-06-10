@@ -2,8 +2,7 @@ import axios from "axios";
 import { getUserDetails } from "../util/GetUser";
 
 const SERVER_URL =
-  process.env.NODE_ENV === "production" ? "/api" : "http://localhost:5000/api";
-
+  process.env.REACT_APP_SERVER_URL || "http://localhost:5000/api";
 const authHeaders = () => {
   let userToken = getUserDetails()?.token;
   return { headers: { Authorization: userToken } };
