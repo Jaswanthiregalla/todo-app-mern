@@ -11,7 +11,8 @@ function Login() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     console.log("Login");
     try {
       setLoading(true);
@@ -39,7 +40,7 @@ function Login() {
       <div className={styles.login__card}>
         <img src={login} alt=".." />
         <h2>Login</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className={styles.input__wrapper}>
             <Input
               placeholder="Username"
