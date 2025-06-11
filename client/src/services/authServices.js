@@ -1,13 +1,11 @@
 import axios from "axios";
-const SERVER_URL =
-  process.env.REACT_APP_SERVER_URL || "http://localhost:5000/api";
 
 const registerUser = (data) => {
-  return axios.post(SERVER_URL + "/register", data);
+  return axios.post(`/api/register`, data);
 };
 
 const loginUser = (data) => {
-  return axios.post(SERVER_URL + "/login", data);
+  return axios.post(`/api/login`, data);
 };
 
 const AuthServices = {
